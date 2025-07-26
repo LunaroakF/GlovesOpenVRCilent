@@ -34,9 +34,12 @@ namespace GlovesOpenVRCilent
                 {
                     serialPort.NewLine = "\n";
                     serialPort.Open();
-
-                    string command = $"SET_WIFI \"{ssid}\" \"{password}\"\n";
-                    serialPort.Write(command);
+                    Thread.Sleep(200);
+                    string command = $"\nSET_WIFI \"{ssid}\" \"{password}\"\n";
+                    byte[] buffer = Encoding.ASCII.GetBytes(command);
+                    serialPort.Write(buffer, 0, buffer.Length);
+                    serialPort.Write(buffer, 0, buffer.Length);
+                    serialPort.Write(buffer, 0, buffer.Length);
 
                     Console.WriteLine($"Sent command to {comPort}: {command}");
                     serialPort.Close();

@@ -35,20 +35,20 @@
             groupBox2 = new GroupBox();
             label5 = new Label();
             label4 = new Label();
-            label3 = new Label();
-            label1 = new Label();
+            RightHandFingerHorizontal = new Label();
+            RightHandFingerVertical = new Label();
             groupBox1 = new GroupBox();
-            label2 = new Label();
+            label8 = new Label();
+            label6 = new Label();
+            LeftHandFingerHorizontal = new Label();
+            LeftHandFingerVertical = new Label();
             tabPage2 = new TabPage();
-            radioButton3 = new RadioButton();
-            radioButton2 = new RadioButton();
-            radioButton1 = new RadioButton();
+            DontShowLog = new RadioButton();
+            RightradioButton = new RadioButton();
+            LeftradioButton = new RadioButton();
             button1 = new Button();
             LogBox = new TextBox();
             timer1 = new System.Windows.Forms.Timer(components);
-            label6 = new Label();
-            label7 = new Label();
-            label8 = new Label();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -72,15 +72,14 @@
             tabPage1.Controls.Add(groupBox1);
             tabPage1.Name = "tabPage1";
             tabPage1.UseVisualStyleBackColor = true;
-            tabPage1.Click += tabPage1_Click;
             // 
             // groupBox2
             // 
             resources.ApplyResources(groupBox2, "groupBox2");
             groupBox2.Controls.Add(label5);
             groupBox2.Controls.Add(label4);
-            groupBox2.Controls.Add(label3);
-            groupBox2.Controls.Add(label1);
+            groupBox2.Controls.Add(RightHandFingerHorizontal);
+            groupBox2.Controls.Add(RightHandFingerVertical);
             groupBox2.Name = "groupBox2";
             groupBox2.TabStop = false;
             // 
@@ -94,62 +93,79 @@
             resources.ApplyResources(label4, "label4");
             label4.Name = "label4";
             // 
-            // label3
+            // RightHandFingerHorizontal
             // 
-            resources.ApplyResources(label3, "label3");
-            label3.Name = "label3";
+            resources.ApplyResources(RightHandFingerHorizontal, "RightHandFingerHorizontal");
+            RightHandFingerHorizontal.Name = "RightHandFingerHorizontal";
             // 
-            // label1
+            // RightHandFingerVertical
             // 
-            resources.ApplyResources(label1, "label1");
-            label1.Name = "label1";
+            resources.ApplyResources(RightHandFingerVertical, "RightHandFingerVertical");
+            RightHandFingerVertical.Name = "RightHandFingerVertical";
             // 
             // groupBox1
             // 
             resources.ApplyResources(groupBox1, "groupBox1");
             groupBox1.Controls.Add(label8);
             groupBox1.Controls.Add(label6);
-            groupBox1.Controls.Add(label7);
-            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(LeftHandFingerHorizontal);
+            groupBox1.Controls.Add(LeftHandFingerVertical);
             groupBox1.Name = "groupBox1";
             groupBox1.TabStop = false;
             // 
-            // label2
+            // label8
             // 
-            resources.ApplyResources(label2, "label2");
-            label2.Name = "label2";
+            resources.ApplyResources(label8, "label8");
+            label8.Name = "label8";
+            // 
+            // label6
+            // 
+            resources.ApplyResources(label6, "label6");
+            label6.Name = "label6";
+            // 
+            // LeftHandFingerHorizontal
+            // 
+            resources.ApplyResources(LeftHandFingerHorizontal, "LeftHandFingerHorizontal");
+            LeftHandFingerHorizontal.Name = "LeftHandFingerHorizontal";
+            // 
+            // LeftHandFingerVertical
+            // 
+            resources.ApplyResources(LeftHandFingerVertical, "LeftHandFingerVertical");
+            LeftHandFingerVertical.Name = "LeftHandFingerVertical";
             // 
             // tabPage2
             // 
             resources.ApplyResources(tabPage2, "tabPage2");
-            tabPage2.Controls.Add(radioButton3);
-            tabPage2.Controls.Add(radioButton2);
-            tabPage2.Controls.Add(radioButton1);
+            tabPage2.Controls.Add(DontShowLog);
+            tabPage2.Controls.Add(RightradioButton);
+            tabPage2.Controls.Add(LeftradioButton);
             tabPage2.Controls.Add(button1);
             tabPage2.Controls.Add(LogBox);
             tabPage2.Name = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // DontShowLog
             // 
-            resources.ApplyResources(radioButton3, "radioButton3");
-            radioButton3.Checked = true;
-            radioButton3.Name = "radioButton3";
-            radioButton3.TabStop = true;
-            radioButton3.UseVisualStyleBackColor = true;
-            radioButton3.CheckedChanged += radioButton3_CheckedChanged;
+            resources.ApplyResources(DontShowLog, "DontShowLog");
+            DontShowLog.Checked = true;
+            DontShowLog.Name = "DontShowLog";
+            DontShowLog.TabStop = true;
+            DontShowLog.UseVisualStyleBackColor = true;
+            DontShowLog.CheckedChanged += DontShowLog_CheckedChanged;
             // 
-            // radioButton2
+            // RightradioButton
             // 
-            resources.ApplyResources(radioButton2, "radioButton2");
-            radioButton2.Name = "radioButton2";
-            radioButton2.UseVisualStyleBackColor = true;
+            resources.ApplyResources(RightradioButton, "RightradioButton");
+            RightradioButton.Name = "RightradioButton";
+            RightradioButton.UseVisualStyleBackColor = true;
+            RightradioButton.CheckedChanged += RightradioButton_CheckedChanged;
             // 
-            // radioButton1
+            // LeftradioButton
             // 
-            resources.ApplyResources(radioButton1, "radioButton1");
-            radioButton1.Name = "radioButton1";
-            radioButton1.UseVisualStyleBackColor = true;
+            resources.ApplyResources(LeftradioButton, "LeftradioButton");
+            LeftradioButton.Name = "LeftradioButton";
+            LeftradioButton.UseVisualStyleBackColor = true;
+            LeftradioButton.CheckedChanged += LeftradioButton_CheckedChanged;
             // 
             // button1
             // 
@@ -164,21 +180,6 @@
             LogBox.Name = "LogBox";
             LogBox.ReadOnly = true;
             LogBox.TextChanged += textBox1_TextChanged;
-            // 
-            // label6
-            // 
-            resources.ApplyResources(label6, "label6");
-            label6.Name = "label6";
-            // 
-            // label7
-            // 
-            resources.ApplyResources(label7, "label7");
-            label7.Name = "label7";
-            // 
-            // label8
-            // 
-            resources.ApplyResources(label8, "label8");
-            label8.Name = "label8";
             // 
             // Monitor
             // 
@@ -211,16 +212,16 @@
         private Button button1;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
-        private Label label1;
-        private Label label2;
-        private RadioButton radioButton2;
-        private RadioButton radioButton1;
-        private RadioButton radioButton3;
+        private Label RightHandFingerVertical;
+        private Label LeftHandFingerVertical;
+        private RadioButton RightradioButton;
+        private RadioButton LeftradioButton;
+        private RadioButton DontShowLog;
         private Label label5;
         private Label label4;
-        private Label label3;
+        private Label RightHandFingerHorizontal;
         private Label label8;
         private Label label6;
-        private Label label7;
+        private Label LeftHandFingerHorizontal;
     }
 }
